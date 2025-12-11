@@ -1,0 +1,36 @@
+[project]
+name = "book-api"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.124.0",
+    "sqlalchemy>=2.0.44",
+    "uvicorn>=0.38.0",
+]
+[tool.ruff]
+line-length = 72
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "E",    # Pycodestyle errors
+    "F",    # Pyflakes
+    "I",    # Import sorting (isort)
+    "B",    # Bugbear
+    "UP"    # Python upgrader
+]
+
+ignore = [
+    "E501",   # Ignore line-length if you want
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+
